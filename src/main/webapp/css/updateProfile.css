@@ -1,0 +1,42 @@
+.form-container {
+	margin-top: 100px;
+	max-width: 600px;
+	background: rgba(255, 255, 255, 0.08);
+	padding: 30px;
+	border-radius: 15px;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+	margin-left: 23.5%;
+}
+
+.form-container h2 {
+	text-align: center;
+	margin-bottom: 20px;
+	color: #00f2fe;
+}
+
+.form-group label {
+	font-weight: 600;
+	color: #00f2fe;
+}
+
+.form-control, textarea {
+	background: rgba(255, 255, 255, 0.1);
+	border: none;
+	color: #fff;
+}
+
+.form-control:focus, textarea:focus {
+	outline: none;
+	box-shadow: 0 0 8px #00f2fe;
+}
+
+.fix {
+	margin-left: 20%;
+}
+
+@media ( max-width : 768px) {
+	.form-container {
+		margin-left: 0; /* remove margin for phones */
+		max-width: 100%; /* optional: make it use full width */
+	}
+}

@@ -1,0 +1,213 @@
+	* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            overflow: hidden;
+        }
+        
+        textarea {
+        	width: 100%;
+    		padding: 12px 45px 12px 15px;
+    		border-radius: 12px;
+    		border: none;
+    		outline: none;
+    		background: rgba(255, 255, 255, 0.2);
+    		color: #fff;
+    		font-size: 15px;
+    		transition: 0.3s;
+        }
+
+        .container {
+            display: flex;
+            width: 900px;
+            height: 550px;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        /* Left panel */
+        .left-panel {
+            flex: 1;
+            background-size: cover;
+            position: relative;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .overlay h1 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        /* Right panel */
+        .right-panel {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(15px);
+        }
+
+        .login-box {
+            width: 80%;
+            padding: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            text-align: center;
+            animation: slideUp 1.2s ease;
+        }
+
+        .login-box h2 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .input-box {
+            position: relative;
+            margin: 20px 0;
+        }
+        
+        .label-prop {
+        	color: white;
+        }
+        
+        input::placeholder {
+  			color: white; /* change this to whatever you want */
+  			opacity: 0.5;  /* make sure it's fully visible */
+		}
+
+        .input-box input {
+            width: 100%;
+            padding: 12px 45px 12px 15px;
+            border-radius: 12px;
+            border: none;
+            outline: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .input-box input:focus {
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 10px #00f2fe, 0 0 20px #4facfe;
+        }
+
+        .input-box i {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #212c2f;
+            font-size: 18px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(45deg, #00f2fe, #4facfe);
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .toggle-password {
+   		 	color: #555;   /* dark gray */
+    		cursor: pointer;
+    		transition: color 0.3s ease;
+		}
+
+		/* When hovering over the eye */
+		.toggle-password:hover {
+    		color: #007bff;  /* blue */
+		}
+
+		/* If you want a different color when active (eye-slash shown) */
+		.toggle-password.fa-eye-slash {
+    		color: #dc3545; /* red */
+		}
+
+        .btn:hover {
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #00f2fe, 0 0 30px #4facfe;
+        }
+
+        .extra-links {
+            margin-top: 15px;
+            font-size: 13px;
+        }
+
+        .extra-links a {
+            color: #00f2fe;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .extra-links a:hover {
+            text-decoration: underline;
+        }
+        
+        #username::placeholder {
+  			color: #888;        /* placeholder text color */
+  			font-size: 14px;    /* optional */
+  			font-style: italic; /* optional */
+  			opacity: 1;         /* make sure it's fully visible */
+		}
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {opacity: 0; transform: scale(0.95);}
+            to {opacity: 1; transform: scale(1);}
+        }
+
+        @keyframes slideUp {
+            from {opacity: 0; transform: translateY(30px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                width: 90%;
+                height: auto;
+            }
+
+            .left-panel {
+                height: 200px;
+            }
+
+            .overlay h1 {
+                font-size: 1.5rem;
+            }
+        }
