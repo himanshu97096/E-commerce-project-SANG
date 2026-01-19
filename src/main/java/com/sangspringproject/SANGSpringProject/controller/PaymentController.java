@@ -4,19 +4,23 @@ import com.razorpay.Order;
 import com.razorpay.RazorpayClient;
 import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/payment")
 public class PaymentController {
 
-    private static final String RAZORPAY_KEY_ID = "rzp_test_RIlXdQyidkY1TJ";  // replace with your test key
-    private static final String RAZORPAY_SECRET = "HXrZzBMJVcthQ6hEGkaLPhkb";      // replace with your secret
+	@Value("${razorpay.key.id}")
+    private String razorpayKeyId;
+
+    @Value("${razorpay.key.secret}")
+    private String razorpaySecret;
 
     @PostMapping("/createOrder")
     @ResponseBody
     public String createOrder(@RequestParam("amount") int amount) throws Exception {
-        RazorpayClient client = new RazorpayClient(RAZORPAY_KEY_ID, RAZORPAY_SECRET);
+        RazorpayClient client = new RazorpayClient(razorpayKeyId, razorpaySecret);
 
         JSONObject options = new JSONObject();
         options.put("amount", amount * 100); // amount in paise
